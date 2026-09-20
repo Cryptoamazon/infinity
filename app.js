@@ -1,6 +1,6 @@
 const $=s=>document.querySelector(s);const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const BRAND={name:'INFINITY',profileNoun:'Infinity',tagline:'Talk to the people you love. Hear their voice.',welcome:'Welcome. Build the version of you that lasts.'};
-const VERSION='Phase 1 · v0.1.1';const questions=["What is something you never get tired of talking about?","What is a lesson life taught you the hard way?","What do you want the people you love to always remember?"];
+const VERSION='Phase 1 · v0.1.2';const questions=["What is something you never get tired of talking about?","What is a lesson life taught you the hard way?","What do you want the people you love to always remember?"];
 const modules={visual:{status:'not-started',captures:[]},voice:{status:'not-started',samples:[]},persona:{status:'forming',answers:[],emotionalRegister:{angry:[],excited:[],proud:[],comforting:[],thoughtful:[],gentle:[]},phraseLibrary:[],mannerisms:[],vocabulary:[]},memory:{status:'forming',items:[]},permissions:{consent:false,localOnly:true,createdAt:null}};
 let state=JSON.parse(localStorage.getItem('infinityState')||'null')||{screen:'intro',name:'',q:0,modules};let stream=null,recorder=null,chunks=[],timer=null,started=0;
 function save(){localStorage.setItem('infinityState',JSON.stringify(state))}function go(screen){state.screen=screen;save();render()}
